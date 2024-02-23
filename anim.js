@@ -9,6 +9,7 @@ function changeColor(){
     let color = inputColor.value;
     let tagH2 = document.getElementsByTagName("h2");
     let tagH1 = document.getElementsByTagName("h1");
+    let tagLabel = document.getElementsByTagName("label");
     let h2b = document.getElementById("border");
     let code = color.substr(1);
 
@@ -25,6 +26,9 @@ function changeColor(){
         }
 
         h2b.style.borderBottom = "2px solid white";
+        for(let label of tagLabel){
+            label.style.color ="white";
+            }
     }
     //Tester to know if the color is to light
     else if (r+g+b > 250){
@@ -37,6 +41,10 @@ function changeColor(){
         }
 
         h2b.style.borderBottom = "2px solid black";
+
+        for(let label of tagLabel){
+        label.style.color ="black";
+        }
     }
     //Change the color
     for(let element of elements){

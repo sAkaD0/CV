@@ -107,16 +107,38 @@ footer{
     border-top: 1px solid;
     margin-top: 20px;
     height: 133.893px;
-    display: grid;
-    align-content: center;
-    grid-template-columns: 133px 1fr;
 }
 
-footer span{
-    display: block;
-    width: 133px;
-    height: 32px;
-    align-self: center;
+form {
+    display:grid;
+    grid-template-columns: 150px 1fr;
+    align-items: center;
+    margin-top:20px ;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    width: 300px;
+    height: 30px;
+    padding: 32px;
+    margin-left: 20px;
+}
+
+label{
+    text-decoration: underline;
+}
+
+input[type="color"] {
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    height: 40px;
+    width: 40px;
+    transition: 0.3s;
+}
+input[type="color"]:hover {
+    background-color: deepskyblue;
 }
 
 @media print{
