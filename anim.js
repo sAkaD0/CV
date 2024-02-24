@@ -16,7 +16,7 @@ function changeColor(){
     hexToRgb(code);
 
     //Tester to know if the color is too dark
-    if (r+g+b < 250){
+    if (r+g+b < 260){
         for (let h2 of tagH2){
             h2.style.color="white";
         }
@@ -31,7 +31,7 @@ function changeColor(){
             }
     }
     //Tester to know if the color is to light
-    else if (r+g+b > 250){
+    else if (r+g+b > 260){
         for (let h2 of tagH2){
             h2.style.color="black";
         }
