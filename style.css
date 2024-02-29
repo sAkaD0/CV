@@ -24,6 +24,23 @@ header h2{
     font-style: italic;
 
 }
+#lightbox {
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    align-items: center;
+    justify-content: center;
+}
+
+#big {
+    width: 400px;
+    height: 400px;
+    margin: 10px;
+}
 
 body{
     margin: 0;
@@ -163,16 +180,51 @@ footer div img{
 }
 
 
-@media print{   
+@media print{
+    header{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-start: 2;
+        background-color: #fffd78;
+        text-align: left;
+        width: 100%;
+        height: 100px;
+    
+    }
+    
+    header div{
+        border-bottom: 1px solid black;
+        height: 80px;
+    }
+
+    header h1{
+        margin: 0;
+    }
+    
+    header h2{
+        width: 80px;
+        border-bottom: 2px solid black;
+        font-style: italic;
+    }
+
     main{
         grid-template-columns: 273.6px 1fr;
         padding-right: 14.4px;
         padding-left: 14.4px;
+        height: 450px;
     }  
     main #gauche #moi{
         width:150px;
         border: 1px solid black;
 
+    }
+
+    main #droite #experiences {
+        padding-top: 0;
+    }
+
+    #loisirs{
+        padding: 0;
     }
     footer{
         display: none;
