@@ -84,6 +84,10 @@ $(document).on("keyup", function (evenement) {
     }
 })
 
+$("#lightbox").on("click", function(evenement){
+    $('#lightbox').css('display', 'none');
+})
+
 
 const settings = {
     async: true,
@@ -118,8 +122,12 @@ function Game() {
             $(this).attr('fill', "#000000");
         });
         $("#space").css("opacity", "0");
+        $("#space").css("display","none");
+        $("main").css("cursor", "auto");
+        $('.destructible').css("opacity", 1);
+        
     }
-    else {
+    else if(compteur %2 != 0) {
         console.log("jeu lancé");
 
         $("main").css("background-color", "#181b1e");
@@ -129,6 +137,15 @@ function Game() {
         $(".color").css({ "border": "1px solid white" });
         $("#gauche").css({ "border-right": "1px solid white" });
         $("body").css("background-color", "#181b1e");
+        $('#space').css("opacity", "1");
+        $("#space").css("display", "block");
+        $("html").css("cursor","url('img/gomme.cur')");
+
+        $(".destructible").hover(function(){
+            if(compteur %2 !=0){
+            $(this).css("opacity", 0);
+        }
+        })
 
         $("svg").each(function () {
             $(this).attr('fill', "#ffffff");
@@ -138,11 +155,10 @@ function Game() {
         xMousePos = e.clientX + window.pageXOffset;
         yMousePos = e.clientY + window.pageYOffset;
 
-        $('#space').css("opacity", "1");
-        $("#space").css("top", yMousePos);
-        $("#space").css("left", xMousePos);
-        };
-         
+        $("#space").css("top", yMousePos -12.5);
+        $("#space").css("left", xMousePos -12.5);
 
+        };
+        
     }
 }

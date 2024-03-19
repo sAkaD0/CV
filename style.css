@@ -51,8 +51,15 @@ body{
 }
 
 #space{
-    display: none;
+    width: 25px;
+    height: 25px;
+    background-image:url(img/gomme.png);
+    background-size: cover;
+    position: absolute;
+    z-index: 1;
+    opacity: 0;
 }
+
 
 main{
     display: grid;
@@ -60,6 +67,7 @@ main{
     padding-right: 20px;
     padding-left: 20px;
     padding-top: 20px;
+
 }
 
 main p{
@@ -74,6 +82,12 @@ main #gauche{
 main #gauche #moi{
     width:200px;
     border: 1px solid black;
+}
+
+main figure{
+    display: grid;
+    justify-content: left;
+    margin: 0;
 }
 
 main #gauche h3{
@@ -151,6 +165,8 @@ form {
     height: 30px;
     padding: 32px;
     margin-bottom: 19.1465px;
+    position: relative;
+    z-index: 2;
 }
 
 label{
@@ -176,45 +192,54 @@ footer div{
     
 }
 
-footer div img{
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 16px;
-    background-size: 60px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    padding:6px;
-    
-}
+
 
 @media screen and (max-width:1024px){
+    header{
+        width: auto;
+    }
+    
     main{
         grid-template-columns: 1fr;
         justify-content: center;
 
     }
 
+
     main #gauche{
         display: grid;
         border: none;
-        justify-content: center;
-        align-items: center;
         margin-right: 0;
     }
 
-    figure{
-        display: grid;
+    main figure{
         justify-content: center;
+        margin-bottom: 25px;
     }
 
     main #gauche h2{
         width: 100%;
         padding-right: 0;
+        margin: 0;
 
     }
 
+    #coordonnees{
+        width: 100%;
+    }
+
+    main #gauche .titre{
+        display: grid;
+        grid-template-columns: 50px 1fr;
+    }
+
     main #droite .titre{
-        grid-template-columns: 15% 1fr;
+        grid-template-columns: 70px 1fr;
+        right: 0;
+    }
+
+    main #droite ul{
+        padding:0;
     }
 
     footer{
@@ -222,9 +247,15 @@ footer div img{
         height: auto;
     }
 
+    form{
+        width: auto;
+    }
+
     footer #play{
         display: none;
     }
+
+
 }
 
 
@@ -277,5 +308,7 @@ footer div img{
     footer{
         display: none;
     }
+
+
 }
  
