@@ -84,7 +84,7 @@ $(document).on("keyup", function (evenement) {
     }
 })
 
-$("#lightbox").on("click", function(evenement){
+$("#lightbox").on("click", function (evenement) {
     $('#lightbox').css('display', 'none');
 })
 
@@ -122,12 +122,12 @@ function Game() {
             $(this).attr('fill', "#000000");
         });
         $("#space").css("opacity", "0");
-        $("#space").css("display","none");
+        $("#space").css("display", "none");
         $("main").css("cursor", "auto");
         $('.destructible').css("opacity", 1);
-        
+
     }
-    else if(compteur %2 != 0) {
+    else if (compteur % 2 != 0) {
         console.log("jeu lancé");
 
         $("main").css("background-color", "#181b1e");
@@ -139,26 +139,61 @@ function Game() {
         $("body").css("background-color", "#181b1e");
         $('#space').css("opacity", "1");
         $("#space").css("display", "block");
-        $("html").css("cursor","url('img/gomme.cur')");
+        $("html").css("cursor", "url('img/gomme.cur')");
 
-        $(".destructible").hover(function(){
-            if(compteur %2 !=0){
-            $(this).css("opacity", 0);
-        }
+        $(".destructible").hover(function () {
+            if (compteur % 2 != 0) {
+                $(this).css("opacity", 0);
+            }
         })
 
         $("svg").each(function () {
             $(this).attr('fill', "#ffffff");
         });
 
-        document.onmousemove = function(e){
-        xMousePos = e.clientX + window.pageXOffset;
-        yMousePos = e.clientY + window.pageYOffset;
+        document.onmousemove = function (e) {
+            xMousePos = e.clientX + window.pageXOffset;
+            yMousePos = e.clientY + window.pageYOffset;
 
-        $("#space").css("top", yMousePos -12.5);
-        $("#space").css("left", xMousePos -12.5);
+            $("#space").css("top", yMousePos - 12.5);
+            $("#space").css("left", xMousePos - 12.5);
 
         };
-        
+
     }
 }
+
+$(window).on('load', function () {
+    $('h1').html('');
+
+    new TypeIt("#un", {
+        lifeLike: false,
+        speed: 75
+    })
+        .type("D")
+        .pause(284)
+        .type("e")
+        .pause(239)
+        .type("g")
+        .pause(320)
+        .type("u")
+        .pause(230)
+        .type("e")
+        .pause(230)
+        .type("l")
+        .pause(163)
+        .type("d")
+        .pause(259)
+        .type("r")
+        .pause(168)
+        .type("e")
+        .pause(256)
+        .type(" ")
+        .pause(461)
+        .type("U")
+        .pause(271)
+        .type("g")
+        .pause(152)
+        .type("o")
+        .go();
+});

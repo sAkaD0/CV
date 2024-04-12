@@ -1,24 +1,25 @@
-html{
+html {
     margin: 0;
     padding: 0;
     font-family: 'Calibri', sans-serif;
+    overflow: hidden;
 }
 
-header{
+header {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 400px 1fr;
     grid-column-start: 2;
     background-color: #fffd78;
-    text-align: left;
     width: 100%;
 
 }
 
-header div{
+header div {
     border-bottom: 1px solid black;
+    margin: 0 auto;
 }
 
-header h2{
+header h2 {
     width: 300px;
     border-bottom: 2px solid black;
     font-style: italic;
@@ -27,7 +28,8 @@ header h2{
 
 .imageSRV path {
     fill: #ffffff;
-  }
+}
+
 #lightbox {
     position: fixed;
     display: none;
@@ -46,14 +48,15 @@ header h2{
     margin: 10px;
 }
 
-body{
+body {
     margin: 0;
+    background-color: #ffffff;
 }
 
-#space{
+#space {
     width: 25px;
     height: 25px;
-    background-image:url(img/gomme.png);
+    background-image: url(img/gomme.png);
     background-size: cover;
     position: absolute;
     z-index: 1;
@@ -61,7 +64,7 @@ body{
 }
 
 
-main{
+main {
     display: grid;
     grid-template-columns: 400px 1fr;
     padding-right: 20px;
@@ -70,32 +73,31 @@ main{
 
 }
 
-main p{
-    margin:0;
+main p {
+    margin: 0;
 }
 
-main #gauche{
+main #gauche {
     margin-right: 25px;
     border-right: 1px solid black;
 }
 
-main #gauche #moi{
-    width:200px;
+main #gauche #moi {
+    width: 200px;
     border: 1px solid black;
 }
 
-main figure{
+main figure {
     display: grid;
     justify-content: left;
     margin: 0;
 }
 
-main #gauche h3{
-    display:block;
-    text-decoration: underline;
+main #gauche h3 {
+    display: block;
 }
 
-main #gauche h2{
+main #gauche h2 {
     display: block;
     background-color: #fffd78;
     width: 200px;
@@ -105,15 +107,15 @@ main #gauche h2{
     font-weight: 100;
 }
 
-main #droite section{
+main #droite section {
     padding-bottom: 10px;
 }
 
-main #droite #experiences{
-    padding-top:50px;
+main #droite #experiences {
+    padding-top: 50px;
 }
 
-main #droite h2{
+main #droite h2 {
     display: block;
     background-color: #fffd78;
     width: 90%;
@@ -122,26 +124,28 @@ main #droite h2{
     font-weight: 100;
 }
 
-main #liste{
+main #liste {
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
 
-main #liste li{
-    padding:0;
+main #liste li {
+    padding: 0;
 }
 
-main #droite .titre{
-    display:grid;
+main #droite .titre {
+    display: grid;
     grid-template-columns: 100px 1fr;
     align-items: center;
 }
-main #gauche .titre{
-    display:grid;
+
+main #gauche .titre {
+    display: grid;
     grid-template-columns: 50px 1fr;
     align-items: center;
 }
-footer{
+
+footer {
     background-color: #fffd78;
     border-top: 1px solid;
     margin-top: 20px;
@@ -152,7 +156,7 @@ footer{
 }
 
 form {
-    display:grid;
+    display: grid;
     grid-template-columns: 150px 1fr;
     align-items: center;
     background: rgba(255, 255, 255, 0.2);
@@ -169,7 +173,7 @@ form {
     z-index: 2;
 }
 
-label{
+label {
     text-decoration: underline;
 }
 
@@ -181,86 +185,93 @@ input[type="color"] {
     width: 40px;
     transition: 0.3s;
 }
+
 input[type="color"]:hover {
     background-color: deepskyblue;
 }
 
-footer div{
+footer div {
     display: grid;
     grid-template-columns: 70px 70px;
     justify-content: right;
-    
+
 }
 
 
 
-@media screen and (max-width:1024px){
-    header{
+@media screen and (max-width:1024px) {
+    header {
         width: auto;
+        grid-template-columns: 1fr;
     }
-    
-    main{
+
+    main {
         grid-template-columns: 1fr;
         justify-content: center;
 
     }
 
 
-    main #gauche{
+    main #gauche {
         display: grid;
         border: none;
         margin-right: 0;
     }
 
-    main figure{
+    main figure {
         justify-content: center;
         margin-bottom: 25px;
     }
 
-    main #gauche h2{
+    main #gauche h2 {
         width: 100%;
         padding-right: 0;
         margin: 0;
 
     }
 
-    #coordonnees{
+    #coordonnees {
         width: 100%;
     }
 
-    main #gauche .titre{
+    main #gauche .titre {
         display: grid;
         grid-template-columns: 50px 1fr;
     }
 
-    main #droite .titre{
+    main #droite .titre {
         grid-template-columns: 70px 1fr;
         right: 0;
     }
 
-    main #droite ul{
-        padding:0;
+    main #droite ul {
+        padding: 0;
     }
 
-    footer{
+    footer {
         grid-template-columns: 1fr;
         height: auto;
     }
 
-    form{
+    form {
         width: auto;
     }
 
-    footer #play{
+    footer #play {
         display: none;
+    }
+
+    .apparition {
+        opacity: 1;
+        transition: 1s;
     }
 
 
 }
 
 
-@media print{
-    header{
+@media print {
+    header {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-column-start: 2;
@@ -268,32 +279,37 @@ footer div{
         text-align: left;
         width: 100%;
         height: 100px;
-    
+
     }
-    
-    header div{
+
+    header div {
         border-bottom: 1px solid black;
         height: 80px;
     }
 
-    header h1{
+    header h1 {
         margin: 0;
     }
-    
-    header h2{
-        width: 80px;
+
+    header h2 {
+        width: 300px;
         border-bottom: 2px solid black;
         font-style: italic;
     }
 
-    main{
+    main {
         grid-template-columns: 273.6px 1fr;
         padding-right: 14.4px;
         padding-left: 14.4px;
         height: 450px;
-    }  
-    main #gauche #moi{
-        width:150px;
+    }
+
+    main figure {
+        justify-content: auto;
+    }
+
+    main #gauche #moi {
+        width: 200px;
         border: 1px solid black;
 
     }
@@ -302,13 +318,13 @@ footer div{
         padding-top: 0;
     }
 
-    #loisirs{
+    #loisirs {
         padding: 0;
     }
-    footer{
+
+    footer {
         display: none;
     }
 
 
 }
- 
